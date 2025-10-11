@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://21wgui61a3l4"]
+[gd_scene load_steps=6 format=3 uid="uid://21wgui61a3l4"]
 
 [ext_resource type="Script" uid="uid://d0twadyd7d8ny" path="res://Player/Scripts/player.gd" id="1_l8h54"]
-[ext_resource type="Script" uid="uid://nk8pmu2qfuit" path="res://Player/States/00_player_state.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://ck3dv0s720557" path="res://Player/States/state_idle.gd" id="2_btcbx"]
+[ext_resource type="Script" uid="uid://diqijf8kdqoda" path="res://Player/States/state_run.gd" id="3_gwnis"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hvfyp"]
 size = Vector2(18, 48)
@@ -24,7 +25,7 @@ debug_color = Color(0, 0.6, 0.69803923, 0.32156864)
 [node name="States" type="Node" parent="."]
 
 [node name="Idle" type="Node" parent="States"]
-script = ExtResource("2_4ntmi")
+script = ExtResource("2_btcbx")
 
 [node name="Run" type="Node" parent="States"]
-script = ExtResource("2_4ntmi")
+script = ExtResource("3_gwnis")
