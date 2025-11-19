@@ -1,6 +1,7 @@
 class_name PlayerStateFall extends PlayerState
 
 #region /// Export Variable  
+
 ## EXPORT VARIABLES ##
 @export var fall_gravity_multiplier : float = 1.165
 @export var coyote_time : float = 0.125
@@ -9,6 +10,7 @@ class_name PlayerStateFall extends PlayerState
 ## STANDARD VARIABLES ## 
 var coyote_timer : float = 0
 var buffer_timer : float = 0
+
 #endregion
 
 # What happens when this state is initialised ?
@@ -63,7 +65,7 @@ func process( _delta : float ) -> PlayerState:
 func physics_process( _delta : float ) -> PlayerState :
 	#check whether player is on the floor
 	if player.is_on_floor() :
-		player.add_debug_indicator()
+		#player.add_debug_indicator()
 		if buffer_timer > 0 :
 			return jump
 		return idle

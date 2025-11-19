@@ -1,7 +1,10 @@
 class_name PlayerStateJump extends PlayerState
 
 #region /// 
+
+## EXPORT VARIABLES ##
 @export var jump_velocity : float = 450.0
+
 #endregion
 
 
@@ -14,13 +17,13 @@ func enter() -> void :
 	#play animation
 	player.animation_player.play( "jump" )
 	player.animation_player.pause()
-	player.add_debug_indicator( Color.WEB_GREEN )
+	#player.add_debug_indicator( Color.WEB_GREEN )
 	player.velocity.y = -jump_velocity
 	pass
 
 
 func exit() -> void : 
-	player.add_debug_indicator( Color.YELLOW )
+	#player.add_debug_indicator( Color.YELLOW )
 	pass
 
 

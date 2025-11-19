@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody2D
 
 #region /// Constants
+
 ## CONTANTS ##
 const DEBUG_JUMP_INDICATOR = preload("uid://brp7n1t85eul1")
 
