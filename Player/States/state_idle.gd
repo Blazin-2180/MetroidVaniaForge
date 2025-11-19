@@ -29,8 +29,11 @@ func handle_input( _event : InputEvent ) -> PlayerState :
 
 # What happens each process tick in this state ?
 func process( _delta : float ) -> PlayerState :
+	#checking player direction
 	if player.direction.x != 0 :
 		return run
+	elif player.direction.y > 0.5 :
+		return crouch
 	return next_state
 
 

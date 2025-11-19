@@ -18,6 +18,13 @@ var previous_state : PlayerState :
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = 980
 var gravity_multiplier : float = 1.0
+
+## ONREADY VARIABLES ##
+@onready var player_sprite : Sprite2D = $player_sprite
+@onready var collision_stand : CollisionShape2D = $collision_stand
+@onready var collision_crouch : CollisionShape2D = $collision_crouch
+@onready var one_way_platform_raycast : RayCast2D = $one_way_platform_raycast
+
 #endregion
 
 func _ready () -> void:
