@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://21wgui61a3l4"]
+[gd_scene load_steps=10 format=3 uid="uid://21wgui61a3l4"]
 
 [ext_resource type="Script" uid="uid://d0twadyd7d8ny" path="res://Player/Scripts/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://ck3dv0s720557" path="res://Player/States/state_idle.gd" id="2_btcbx"]
 [ext_resource type="Script" uid="uid://diqijf8kdqoda" path="res://Player/States/state_run.gd" id="3_gwnis"]
 [ext_resource type="Script" uid="uid://bfcejqxshiub5" path="res://Player/States/state_jump.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://ds5hdsnwo8hxp" path="res://Player/States/state_fall.gd" id="5_k53q1"]
+[ext_resource type="Script" uid="uid://3mbvv26tdkhn" path="res://Player/States/state_crouch.gd" id="6_fhl08"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hvfyp"]
 size = Vector2(18, 48)
@@ -12,7 +13,12 @@ size = Vector2(18, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8h54"]
 size = Vector2(16, 46)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhl08"]
+size = Vector2(16, 30)
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 3
 script = ExtResource("1_l8h54")
 
 [node name="States" type="Node" parent="."]
@@ -33,13 +39,23 @@ script = ExtResource("4_gwnis")
 unique_name_in_owner = true
 script = ExtResource("5_k53q1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Crouch" type="Node" parent="States"]
+unique_name_in_owner = true
+script = ExtResource("6_fhl08")
+
+[node name="player_sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -24)
 texture = SubResource("PlaceholderTexture2D_hvfyp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collision_stand" type="CollisionShape2D" parent="."]
 position = Vector2(0, -23)
 shape = SubResource("RectangleShape2D_l8h54")
+debug_color = Color(0, 0.6, 0.69803923, 0.32156864)
+
+[node name="collision_crouch" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_fhl08")
+disabled = true
 debug_color = Color(0, 0.6, 0.69803923, 0.32156864)
 
 [node name="Label" type="Label" parent="."]
@@ -51,3 +67,7 @@ theme_override_font_sizes/font_size = 12
 text = "state"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="one_way_platform_raycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 4)
+collision_mask = 2
