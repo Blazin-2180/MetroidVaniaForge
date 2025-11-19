@@ -5,7 +5,8 @@ class_name Player extends CharacterBody2D
 const DEBUG_JUMP_INDICATOR = preload("uid://brp7n1t85eul1")
 
 ## EXPORTS ##
-@export var move_speed : float = 150
+@export var move_speed : float = 150.0
+@export var max_fall_velocity : float = 600.0
 
 ## STATE VARIABLES ##
 var states : Array[ PlayerState ]
@@ -43,6 +44,7 @@ func _process ( _delta : float ) -> void:
 
 func _physics_process ( _delta : float ) -> void:
 	velocity.y += gravity * _delta * gravity_multiplier
+	velocity.y = clampf( velocity.y, -1000.0, max_fall_velocity )
 	move_and_slide()
 	change_state( current_state.physics_process(_delta) )
 	pass

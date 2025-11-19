@@ -19,6 +19,8 @@ func init() -> void :
 # What happens when we enter this state ?
 func enter() -> void :
 	#when entering the fall state, increase the gravity on the player
+	player.animation_player.play( "jump" )
+	player.animation_player.pause()
 	player.gravity_multiplier = fall_gravity_multiplier
 	if player.previous_state == jump :
 		coyote_timer = 0
@@ -53,6 +55,7 @@ func _ready() -> void:
 func process( _delta : float ) -> PlayerState:
 	coyote_timer -= _delta
 	buffer_timer -= _delta
+	set_jump_frame()
 	return next_state
 
 
@@ -66,3 +69,9 @@ func physics_process( _delta : float ) -> PlayerState :
 		return idle
 	player.velocity.x = player.direction.x * player.move_speed
 	return next_state
+
+
+func set_jump_frame() -> void :
+	var frame : float = remap( player.velocity.y, 0.0, player.max_fall_velocity, 0.5, 1 )
+	player.animation_player.seek( frame, true )
+	pass
