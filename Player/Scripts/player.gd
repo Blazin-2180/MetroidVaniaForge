@@ -1,26 +1,23 @@
 class_name Player extends CharacterBody2D
 
 #region /// Constants
+## CONTANTS ##
 const DEBUG_JUMP_INDICATOR = preload("uid://brp7n1t85eul1")
-#endregion
 
-#region /// Export Variables
+## EXPORTS ##
 @export var move_speed : float = 150
-#endregion
 
-#region /// State Machine Variables
+## STATE VARIABLES ##
 var states : Array[ PlayerState ]
-
 var current_state : PlayerState : 
-	get : return states.front()
-	
+	get : return states.front()	
 var previous_state : PlayerState :
 	get : return states[ 1 ]
-#endregion
 
-#region /// Standard Variables
+## STANDARD VARIABLES ##
 var direction : Vector2 = Vector2.ZERO
 var gravity : float = 980
+var gravity_multiplier : float = 1.0
 #endregion
 
 func _ready () -> void:
@@ -37,7 +34,7 @@ func _process ( _delta : float ) -> void:
 	pass
 
 func _physics_process ( _delta : float ) -> void:
-	velocity.y += gravity * _delta 
+	velocity.y += gravity * _delta * gravity_multiplier
 	move_and_slide()
 	change_state( current_state.physics_process(_delta) )
 	pass
