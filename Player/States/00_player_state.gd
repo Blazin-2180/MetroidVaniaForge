@@ -6,8 +6,10 @@ var next_state : PlayerState
 
 
 #region /// state references
-@onready var idle: PlayerStateIdle = %Idle
-@onready var run: PlayerStateRun = %Run
+@onready var idle : PlayerStateIdle = %Idle
+@onready var run : PlayerStateRun = %Run
+@onready var jump : PlayerStateJump = %Jump
+@onready var fall : PlayerStateFall = %Fall
 #endregion
 
 # What happens when the state is initialised ?
