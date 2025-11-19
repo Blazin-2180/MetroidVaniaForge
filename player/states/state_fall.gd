@@ -35,11 +35,13 @@ func enter() -> void :
 func exit() -> void:
 	#reset the players gravity after landing from falling
 	player.gravity_multiplier = 1.0
+	#reset the buffer timer once exiting jump state
+	buffer_timer = 0
 	pass
 
 
 # What happens when an input is pressed ?
-func handle_input( _event : InputEvent ) -> PlayerState:
+func handle_input( _event : InputEvent ) -> PlayerState :
 	if _event.is_action_pressed( "jump" ) :
 		if coyote_timer > 0 :
 			return jump
