@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c5ba8o851ncfd"]
 
-[ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://Player/player.tscn" id="1_uof5o"]
+[ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="1_hddm4"]
 
 [sub_resource type="Gradient" id="Gradient_edjgo"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -88,10 +88,11 @@ texture = SubResource("GradientTexture2D_rupst")
 shape = SubResource("RectangleShape2D_wt17y")
 
 [node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(132.94366, 238.94792)
+position = Vector2(132, 239.00002)
 rotation = 0.4891484
 scale = Vector2(4.572548, 2.0937495)
 texture = SubResource("GradientTexture2D_rupst")
+metadata/_edit_group_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D7"]
 
@@ -112,5 +113,5 @@ position = Vector2(-1.5258789e-05, 0)
 shape = SubResource("RectangleShape2D_u4ce8")
 one_way_collision = true
 
-[node name="Player" parent="." instance=ExtResource("1_uof5o")]
+[node name="Player" parent="." instance=ExtResource("1_hddm4")]
 position = Vector2(245, 102)

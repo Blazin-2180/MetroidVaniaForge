@@ -23,7 +23,8 @@ var gravity_multiplier : float = 1.0
 @onready var player_sprite : Sprite2D = $player_sprite
 @onready var collision_stand : CollisionShape2D = $collision_stand
 @onready var collision_crouch : CollisionShape2D = $collision_crouch
-@onready var one_way_platform_raycast : RayCast2D = $one_way_platform_raycast
+@onready var one_way_platform_shapecast: ShapeCast2D = $one_way_platform_shapecast
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 #endregion
 
@@ -84,11 +85,16 @@ func change_state (new_state : PlayerState) -> void :
 	pass
 	
 func update_direction() -> void :
-	#var previous_direction : Vector2 = direction
+	var previous_direction : Vector2 = direction
 	var x_axis = Input.get_axis( "left", "right" )
 	var y_axis = Input.get_axis( "up", "down" )
 	direction = Vector2( x_axis, y_axis )
-	# Do more stuff, lol
+	# change the direction of the sprite depending on input
+	if previous_direction.x != direction.x :
+		if direction.x < 0 :
+			player_sprite.flip_h = true
+		elif direction.x > 0 :
+			player_sprite.flip_h = false
 	pass
 
 

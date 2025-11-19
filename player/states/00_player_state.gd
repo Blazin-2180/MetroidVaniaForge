@@ -1,6 +1,5 @@
-@icon( "res://Player/States/state.svg" )
+@icon( "res://player/states/state.svg" )
 class_name PlayerState extends Node
-
 
 #region /// state references
 ## STATE REFERENCES ##
