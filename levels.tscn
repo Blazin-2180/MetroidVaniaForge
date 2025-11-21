@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq7w2k2r72qtd"]
+
+[ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_48rmr"]
+
+[node name="Levels" type="Node2D"]
+
+[node name="forest_01" type="Node2D" parent="."]
+z_index = 256
+script = ExtResource("1_48rmr")
+width = 1152
+metadata/_custom_type_script = "uid://c5507fl50k2y"
+
+[node name="level_transition" type="ColorRect" parent="."]
+offset_left = 1152.0
+offset_top = 230.0
+offset_right = 1172.0
+offset_bottom = 270.0
+color = Color(0.98878354, 0.8239969, 0, 1)
+
+[node name="forest_03" type="Node2D" parent="."]
+z_index = 256
+position = Vector2(1174, -3)
+script = ExtResource("1_48rmr")
+width = 1920
+metadata/_custom_type_script = "uid://c5507fl50k2y"
+
+[node name="level_transition2" type="ColorRect" parent="."]
+offset_left = 1935.0
+offset_top = 270.0
+offset_right = 1955.0
+offset_bottom = 310.0
+rotation = 1.5707964
+color = Color(0.98878354, 0.8239969, 0, 1)
+
+[node name="dungeon_01" type="Node2D" parent="."]
+z_index = 256
+position = Vector2(1894, 291)
+script = ExtResource("1_48rmr")
+width = 896
+metadata/_custom_type_script = "uid://c5507fl50k2y"
+
+[node name="LevelBounds" type="Node2D" parent="."]
+z_index = 256
+position = Vector2(-52, 1099)
+script = ExtResource("1_48rmr")
+width = 1920
+height = 302
+metadata/_custom_type_script = "uid://c5507fl50k2y"
+
+[node name="LevelBounds2" type="Node2D" parent="."]
+z_index = 256
+position = Vector2(1900, 587)
+script = ExtResource("1_48rmr")
+width = 960
+height = 814
+metadata/_custom_type_script = "uid://c5507fl50k2y"

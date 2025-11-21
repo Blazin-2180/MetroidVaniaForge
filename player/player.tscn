@@ -139,6 +139,7 @@ unique_name_in_owner = true
 script = ExtResource("6_fhl08")
 
 [node name="player_sprite" type="Sprite2D" parent="."]
+modulate = Color(0.73760307, 0.73760307, 0.73760307, 1)
 position = Vector2(0, -39)
 texture = ExtResource("7_boad6")
 hframes = 16
@@ -157,6 +158,7 @@ disabled = true
 debug_color = Color(0, 0.6, 0.69803923, 0.32156864)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -30.0
 offset_top = -77.0
 offset_right = 30.0

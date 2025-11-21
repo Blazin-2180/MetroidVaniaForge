@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://b774pasjaod6f"]
+
+[ext_resource type="Texture2D" uid="uid://crgs7jknce418" path="res://assets/dungeon_torch_test2.png" id="1_eea26"]
+[ext_resource type="Script" uid="uid://c1veuoyoiwhw0" path="res://levels/01_dungeons/dungeon_torch_flicker.gd" id="2_ck65o"]
+
+[sub_resource type="Animation" id="Animation_gjg20"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pmbq8"]
+resource_name = "torch"
+length = 0.533
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khufk"]
+_data = {
+&"RESET": SubResource("Animation_gjg20"),
+&"torch": SubResource("Animation_pmbq8")
+}
+
+[sub_resource type="Gradient" id="Gradient_an42t"]
+offsets = PackedFloat32Array(0, 0.42, 0.76, 1)
+colors = PackedColorArray(0.89062977, 0.9955722, 0.92138803, 1, 0.1469436, 0.67650515, 0.186736, 1, 0.08263462, 0.40495878, 0.10685474, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bk5vh"]
+gradient = SubResource("Gradient_an42t")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[node name="dungeon_torch" type="Sprite2D"]
+texture = ExtResource("1_eea26")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_khufk")
+}
+autoplay = "torch"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -4)
+texture = SubResource("GradientTexture2D_bk5vh")
+script = ExtResource("2_ck65o")
