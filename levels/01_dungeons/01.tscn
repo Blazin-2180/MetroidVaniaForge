@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://dd0r8bmlp7ubo"]
+[gd_scene load_steps=6 format=4 uid="uid://dd0r8bmlp7ubo"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_s3mq1"]
 [ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="2_8nu6c"]
 [ext_resource type="TileSet" uid="uid://cdnhj6tmfyl6t" path="res://levels/tilesets/forgotten_forest.tres" id="3_l4ehx"]
 [ext_resource type="PackedScene" uid="uid://b774pasjaod6f" path="res://scenes/dungeon_torch.tscn" id="4_8nu6c"]
+[ext_resource type="PackedScene" uid="uid://cgawoyogixas1" path="res://general/level_transition/level_transition.tscn" id="5_l4ehx"]
 
 [node name="01" type="Node2D"]
 
@@ -96,3 +97,8 @@ position = Vector2(1384, 252)
 rotation = 3.1400688
 tile_map_data = PackedByteArray("AAARAAcAAAAVAAcAAAARAAgAAAAVAAgAAAATAAcAAAAVAAcAAAATAAgAAAAVAAgAAAAUAAcAAAAVAAcAAAAUAAgAAAAVAAgAAAAZAAcAAAAVAAcAAAAZAAgAAAAVAAgAAAAYAAcAAAAVAAcAAAAYAAgAAAAVAAgAAAAXAAcAAAAVAAcAAAAXAAgAAAAVAAgAAAAaAAYAAAAVAAcAAAAaAAcAAAAVAAgAAAAVAAYAAAAVAAcAAAAVAAcAAAAVAAgAAAASAAYAAAAVAAcAAAASAAcAAAAVAAgAAAA=")
 tile_set = ExtResource("3_l4ehx")
+
+[node name="level_transition" parent="." instance=ExtResource("5_l4ehx")]
+location = 2
+target_level = "uid://bhkksbcdahbru"
+target_area_name = "LevelTransition"
