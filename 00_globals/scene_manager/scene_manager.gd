@@ -9,15 +9,21 @@ signal load_scene_finished
 
 #endregion
 
+func _ready() -> void:
+	await get_tree().process_frame
+	load_scene_finished.emit()
+	pass
+
 func transition_scene( new_scene : String, target_area : String, player_offset : Vector2, direction : String ) -> void :
 	
 	# Fade new scene out
 	load_scene_started.emit()
+	await get_tree().process_frame
 	get_tree().change_scene_to_file( new_scene )
 
 	await get_tree().scene_changed
 
-	new_scene_ready.emit(target_area, player_offset )
+	new_scene_ready.emit( target_area, player_offset )
 
 	# Fade new scene in
 	load_scene_finished.emit()

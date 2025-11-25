@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://bhkksbcdahbru"]
+[gd_scene load_steps=4 format=4 uid="uid://bhkksbcdahbru"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_uqe0m"]
-[ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="2_epyyu"]
 [ext_resource type="TileSet" uid="uid://cdnhj6tmfyl6t" path="res://levels/tilesets/forgotten_forest.tres" id="3_epyyu"]
 [ext_resource type="PackedScene" uid="uid://cgawoyogixas1" path="res://general/level_transition/level_transition.tscn" id="4_s2tn3"]
 
@@ -12,9 +11,6 @@ z_index = 256
 script = ExtResource("1_uqe0m")
 width = 1920
 metadata/_custom_type_script = "uid://c5507fl50k2y"
-
-[node name="Player" parent="." instance=ExtResource("2_epyyu")]
-position = Vector2(27, 228)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 modulate = Color(0, 0, 0, 0.2784314)
@@ -75,12 +71,12 @@ collision_enabled = false
 [node name="level_transition" parent="." instance=ExtResource("4_s2tn3")]
 position = Vector2(0, 232)
 size = 8
-target_level = "uid://bhq5sxycj6wg0"
+target_scene = "uid://bhq5sxycj6wg0"
 target_area_name = "LevelTransition"
 
 [node name="level_transition2" parent="." instance=ExtResource("4_s2tn3")]
 position = Vector2(600, 272)
 size = 6
 location = 3
-target_level = "uid://dd0r8bmlp7ubo"
+target_scene = "uid://dd0r8bmlp7ubo"
 target_area_name = "LevelTransition"
