@@ -63,4 +63,4 @@ target_scene = "uid://bhkksbcdahbru"
 target_area_name = "level_transition"
 
 [node name="Player" parent="." instance=ExtResource("2_1pu88")]
-position = Vector2(1122, 197)
+position = Vector2(48, 232)
