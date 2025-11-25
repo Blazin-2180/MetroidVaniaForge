@@ -19,7 +19,7 @@ enum SIDE { LEFT, RIGHT, UP, DOWN }
 		apply_area_settings()
 
 @export_file("*.tscn") var target_scene : String = ""
-@export var target_area_name : String = "LevelTransition"
+@export var target_area_name : String = "level_transition"
 
 ## ONREADY VARIABLES ##
 @onready var area: Area2D = $Area2D

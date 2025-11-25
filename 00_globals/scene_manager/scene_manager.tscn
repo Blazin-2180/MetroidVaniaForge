@@ -13,7 +13,7 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 6.0
-offset_right = 46.0
+offset_left = 440.0
+offset_right = 480.0
 offset_bottom = 23.0
 text = "Test"

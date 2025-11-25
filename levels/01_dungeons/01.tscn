@@ -99,6 +99,7 @@ tile_map_data = PackedByteArray("AAARAAcAAAAVAAcAAAARAAgAAAAVAAgAAAATAAcAAAAVAAc
 tile_set = ExtResource("3_l4ehx")
 
 [node name="level_transition" parent="." instance=ExtResource("5_l4ehx")]
+position = Vector2(0, -1)
+size = 3
 location = 2
-target_level = "uid://bhkksbcdahbru"
 target_area_name = "LevelTransition"

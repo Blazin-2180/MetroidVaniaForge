@@ -72,11 +72,4 @@ collision_enabled = false
 position = Vector2(0, 232)
 size = 8
 target_scene = "uid://bhq5sxycj6wg0"
-target_area_name = "LevelTransition"
-
-[node name="level_transition2" parent="." instance=ExtResource("4_s2tn3")]
-position = Vector2(600, 272)
-size = 6
-location = 3
-target_scene = "uid://dd0r8bmlp7ubo"
-target_area_name = "LevelTransition"
+target_area_name = "level_transition"
