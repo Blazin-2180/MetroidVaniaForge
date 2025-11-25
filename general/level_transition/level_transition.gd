@@ -38,7 +38,7 @@ func _ready() -> void:
 
 # Detect when player enters and transition to the next scene
 func _on_player_entered( _n : Node2D) -> void :
-	SceneManager.transition_scene( target_scene, target_area_name, get_offset( _n), "left" )
+	SceneManager.transition_scene( target_scene, target_area_name, get_offset( _n), get_transition_direction() )
 	pass
 
 
@@ -97,3 +97,15 @@ func get_offset( player : Node2D ) -> Vector2 :
 		else : 
 			offset.y = 48
 	return offset
+
+
+func get_transition_direction() -> String : 
+	match location :
+		SIDE.LEFT :
+			return "Left"
+		SIDE.RIGHT : 
+			return "Right"
+		SIDE.UP :
+			return "Up"
+		_:
+			return "Down"
