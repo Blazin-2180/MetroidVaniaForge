@@ -1,6 +1,12 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cdnhj6tmfyl6t"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cdnhj6tmfyl6t"]
 
 [ext_resource type="Texture2D" uid="uid://d26o13ot5k62b" path="res://levels/tilesets/sprites/forgotten_forest_example_tileset.png" id="1_uh0r3"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_uh0r3"]
+tile_data = PackedInt32Array(0, 1507328, 9, 65536, 1507328, 10, 131072, 1507328, 11, 196608, 1507328, 12, 262144, 1507328, 13, 1, 1572864, 9, 65537, 1572864, 10, 131073, 1572864, 11, 196609, 1572864, 12, 262145, 1572864, 13, 327681, 1572864, 14, 393217, 1572864, 15, 65538, 1638400, 10, 131074, 1638400, 11, 196610, 1638400, 12, 262146, 1638400, 13)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_fcive"]
+tile_data = PackedInt32Array(0, 1310720, 6, 1, 1376256, 6)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fcive"]
 resource_name = "forgotten_forest"
@@ -715,6 +721,7 @@ texture_region_size = Vector2i(32, 32)
 18:4/0/terrains_peering_bit/bottom_side = 0
 18:4/0/terrains_peering_bit/left_side = 0
 18:4/0/terrains_peering_bit/top_side = 0
+18:4/0/terrains_peering_bit/top_right_corner = 0
 19:4/0 = 0
 19:4/0/terrain_set = 0
 19:4/0/terrain = 0
@@ -723,6 +730,7 @@ texture_region_size = Vector2i(32, 32)
 19:4/0/terrains_peering_bit/bottom_side = 0
 19:4/0/terrains_peering_bit/bottom_left_corner = 0
 19:4/0/terrains_peering_bit/left_side = 0
+19:4/0/terrains_peering_bit/top_left_corner = 0
 19:4/0/terrains_peering_bit/top_side = 0
 19:4/0/terrains_peering_bit/top_right_corner = 0
 20:4/0 = 0
@@ -1265,3 +1273,5 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 terrain_set_0/terrain_1/name = "Stone 1"
 terrain_set_0/terrain_1/color = Color(0.18772161, 0.18772161, 0.18772161, 1)
 sources/0 = SubResource("TileSetAtlasSource_fcive")
+pattern_0 = SubResource("TileMapPattern_uh0r3")
+pattern_1 = SubResource("TileMapPattern_fcive")
