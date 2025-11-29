@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwcysqsxn21tb"]
+
+[ext_resource type="Texture2D" uid="uid://c7crlsjtf2kim" path="res://levels/props/bird.png" id="1_jyhfs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s851b"]
+atlas = ExtResource("1_jyhfs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2v12"]
+atlas = ExtResource("1_jyhfs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2lsl"]
+atlas = ExtResource("1_jyhfs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86hoh"]
+atlas = ExtResource("1_jyhfs")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ajbg"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_s851b")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_q2v12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2lsl")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_86hoh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(0, -5)
+sprite_frames = SubResource("SpriteFrames_2ajbg")
+autoplay = "default"
+frame_progress = 0.23979557

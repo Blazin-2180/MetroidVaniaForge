@@ -158,6 +158,7 @@ disabled = true
 debug_color = Color(0, 0.6, 0.69803923, 0.32156864)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = -30.0
 offset_top = -77.0
 offset_right = 30.0

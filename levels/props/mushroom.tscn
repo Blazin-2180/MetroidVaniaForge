@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3n343i743vv0"]
+
+[ext_resource type="Texture2D" uid="uid://12vb8v4v3pll" path="res://levels/tilesets/sprites/cave_test.png" id="1_kt4r1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to8b0"]
+atlas = ExtResource("1_kt4r1")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx8ym"]
+atlas = ExtResource("1_kt4r1")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b0lm2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to8b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx8ym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="mushroom" type="AnimatedSprite2D"]
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_b0lm2")
+autoplay = "default"
+frame_progress = 0.34521666

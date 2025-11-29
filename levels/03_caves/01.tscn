@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=4 uid="uid://c7svy1iit0lho"]
+[gd_scene load_steps=9 format=4 uid="uid://c7svy1iit0lho"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_8wpmi"]
 [ext_resource type="TileSet" uid="uid://k10vewo52x0l" path="res://levels/tilesets/caves_test.tres" id="2_wno2a"]
 [ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="3_8wpmi"]
 [ext_resource type="Texture2D" uid="uid://8h7bcem4snw2" path="res://levels/tilesets/sprites/cave_background.png" id="4_gf1p5"]
 [ext_resource type="Texture2D" uid="uid://hgue3rh3ig50" path="res://levels/tilesets/sprites/mushroom_background.png" id="5_8e0th"]
+[ext_resource type="PackedScene" uid="uid://b3n343i743vv0" path="res://levels/props/mushroom.tscn" id="6_8e0th"]
+[ext_resource type="PackedScene" uid="uid://bg12pesha41hr" path="res://levels/props/plant.tscn" id="6_ng8wm"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ng8wm"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
 
 [node name="01" type="Node2D"]
 
@@ -20,36 +26,227 @@ offset_right = 961.0
 offset_bottom = 430.0
 color = Color(0, 0, 0, 1)
 
-[node name="Parallax2D3" type="Parallax2D" parent="."]
-modulate = Color(0.2602899, 0, 0.32349485, 1)
-scroll_scale = Vector2(0.7, 0.7)
+[node name="back_mushrooms" type="Parallax2D" parent="."]
+modulate = Color(0.3682928, 0.30105543, 0.38459277, 1)
+scroll_scale = Vector2(0.2, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="back_mushrooms"]
 modulate = Color(0.10901269, 0.03416586, 0.12662369, 1)
 position = Vector2(481, 214)
 texture = ExtResource("5_8e0th")
 flip_h = true
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
-scroll_scale = Vector2(0.9, 0.9)
+[node name="cave" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-modulate = Color(0.027427131, 0.0128834015, 0.031582475, 1)
+[node name="Sprite2D" type="Sprite2D" parent="cave"]
+modulate = Color(0.011216462, 0.011216462, 0.011216462, 1)
 position = Vector2(479, 215)
 texture = ExtResource("4_gf1p5")
 
-[node name="Parallax2D2" type="Parallax2D" parent="."]
+[node name="front_mushrooms" type="Parallax2D" parent="."]
 modulate = Color(0.2602899, 0, 0.32349485, 1)
-scroll_scale = Vector2(0.5, 0.5)
+scroll_scale = Vector2(0.6, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
-modulate = Color(0.17848746, 0.083439484, 0.20129895, 1)
+[node name="Sprite2D" type="Sprite2D" parent="front_mushrooms"]
+modulate = Color(0.11898632, 0.08079944, 0.12662369, 1)
 position = Vector2(481, 214)
 texture = ExtResource("5_8e0th")
+
+[node name="back_walls" type="Parallax2D" parent="."]
+modulate = Color(0.31670618, 0.1937611, 0.30914494, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="back_walls"]
+tile_map_data = PackedByteArray("AAD+/wgAAAAUAAAAAAD//wgAAAAVAAAAAAAAAAgAAAAVAAMAAAABAAgAAAATAAAAAAABAAkAAAAUAAMAAAACAAkAAAAVAAAAAAADAAkAAAAVAAAAAAAEAAkAAAATAAAAAAAEAAoAAAAUAAMAAAAFAAoAAAAVAAAAAAAGAAoAAAATAAAAAAAGAAsAAAAUAAMAAAAHAAsAAAAVAAAAAAAIAAsAAAATAAAAAAAIAAwAAAATAAUAAAAHAAwAAAAUAAIAAAAHAA0AAAATAAUAAAAGAA0AAAAVAAUAAAAFAA0AAAAVAAUAAAAEAA0AAAAVAAUAAAADAA0AAAAVAAUAAAACAA0AAAAVAAUAAAABAA0AAAAVAAUAAAAAAA0AAAAUAAUAAAAAAAwAAAAUAAQAAAAAAAsAAAAVAAEAAAAAAAoAAAAVAAQAAAAAAAkAAAAVAAEAAAD//wkAAAAVAAQAAAD//woAAAAVAAEAAAD//wsAAAAVAAEAAAD//wwAAAAVAAUAAAD+/wsAAAATAAMAAAD+/wwAAAAQAAMAAAD+/woAAAATAAMAAAD+/wkAAAATAAMAAAD+/w0AAAAXAAIAAAABAAoAAAAVAAEAAAABAAsAAAAVAAEAAAABAAwAAAAVAAEAAAACAAwAAAAVAAQAAAACAAsAAAAVAAQAAAACAAoAAAAVAAQAAAADAAoAAAAVAAQAAAADAAsAAAAVAAEAAAADAAwAAAAVAAEAAAAEAAwAAAAVAAEAAAAEAAsAAAAVAAEAAAAFAAsAAAAVAAEAAAAFAAwAAAAVAAQAAAAGAAwAAAAVAAEAAAAcAAgAAAATAAAAAAAbAAgAAAAVAAAAAAAbAAkAAAAVAAQAAAAcAAkAAAAWAAQAAAAcAAoAAAAWAAQAAAAcAAsAAAATAAUAAAAbAAsAAAAVAAUAAAAaAAoAAAAVAAEAAAAaAAkAAAAVAAQAAAAaAAsAAAAUAAIAAAAbAAoAAAAVAAQAAAAaAAgAAAAVAAAAAAAZAAgAAAAUAAAAAAAZAAkAAAATAAMAAAAZAAoAAAAUAAEAAAAYAAoAAAAVAAAAAAAXAAoAAAAUAAAAAAAXAAsAAAAUAAEAAAAWAAsAAAAUAAAAAAAWAAwAAAASAAUAAAAVAAwAAAARAAUAAAAUAAwAAAARAAAAAAAXAAwAAAAVAAUAAAAYAAsAAAAVAAEAAAAZAAsAAAAVAAQAAAAaAAwAAAATAAUAAAAZAAwAAAAVAAUAAAAYAAwAAAAVAAUAAAAPAAAAAAAVAAEAAAAPAAEAAAAUAAIAAAAOAAEAAAAVAAEAAAAOAAIAAAAVAAUAAAAOAAAAAAAVAAQAAAAPAP//AAAVAAAAAAAQAP//AAATAAAAAAAQAAAAAAAUAAMAAAAOAP//AAAVAAAAAAANAP//AAAVAAAAAAAMAP//AAAVAAAAAAALAP//AAAVAAAAAAALAAAAAAAUAAQAAAAMAAAAAAAVAAQAAAANAAAAAAAVAAEAAAANAAEAAAAVAAQAAAAMAAEAAAAUAAQAAAALAAEAAAAUAAUAAAAKAAAAAAAVAAUAAAAJAAAAAAAVAAUAAAAIAAAAAAAUAAUAAAAJAP//AAAVAAAAAAAKAP//AAAVAAAAAAAIAP//AAAUAAAAAAAMAAIAAAAUAAUAAAANAAIAAAAVAAUAAAAPAAIAAAATAAUAAAAQAAEAAAAVAAUAAAARAAAAAAAWAAAAAAASAAAAAAARAAUAAAARAAEAAAATAAUAAAATAAAAAAASAAUAAAAUAAAAAAAVAAUAAAAVAAAAAAAVAAUAAAAWAAAAAAAVAAUAAAAVAP//AAAVAAAAAAAUAP//AAAVAAAAAAATAP//AAAUAAAAAAAWAP//AAAVAAAAAAAXAP//AAAVAAAAAAAXAAAAAAAVAAUAAAAYAAAAAAAVAAUAAAAZAAAAAAAUAAQAAAAZAAEAAAAUAAUAAAAaAAEAAAAUAAQAAAAaAAIAAAAUAAUAAAAbAAEAAAAVAAQAAAAcAAEAAAAVAAQAAAAdAAEAAAAWAAQAAAAdAAAAAAAWAAQAAAAcAAAAAAAVAAEAAAAbAAAAAAAVAAQAAAAaAAAAAAAVAAEAAAAYAP//AAAVAAAAAAAZAP//AAAVAAAAAAAaAP//AAAVAAAAAAAbAP//AAAVAAAAAAAcAP//AAAVAAAAAAAdAP//AAATAAAAAAAbAAIAAAAVAAUAAAAcAAIAAAAUAAQAAAAcAAMAAAAUAAUAAAAdAAMAAAATAAUAAAAdAAIAAAAWAAQAAAABAAAAAAAWAAQAAAABAAEAAAAWAAQAAAAAAAEAAAAVAAQAAAAAAAAAAAAVAAEAAAD//wAAAAATAAMAAAD//wEAAAATAAMAAAD//wIAAAAUAAUAAAAAAAIAAAAVAAIAAAABAAIAAAATAAUAAAABAP//AAATAAAAAAAAAP//AAAVAAAAAAD/////AAAUAAAAAAAAAAQAAAAXAAQAAAAAAAUAAAAXAAQAAAAAAAYAAAAXAAQAAAAAAAcAAAAXAAQAAAAAAAMAAAAXAAQAAAA=")
+tile_set = ExtResource("2_wno2a")
+collision_enabled = false
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0.98199487, 0.51037174, 0.9303283, 1)
+position = Vector2(363, -4)
+amount = 20
+lifetime = 22.180000000000003
+visibility_rect = Rect2(-100, -100, 960, 200)
+process_material = SubResource("ParticleProcessMaterial_ng8wm")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+modulate = Color(0.98199487, 0.51037174, 0.9303283, 1)
+position = Vector2(686, -1)
+amount = 20
+lifetime = 22.180000000000003
+visibility_rect = Rect2(-100, -100, 960, 200)
+process_material = SubResource("ParticleProcessMaterial_ng8wm")
+
+[node name="props2" type="Node2D" parent="."]
+modulate = Color(0.23524225, 0.13154478, 0.22388214, 1)
+position = Vector2(-225, 31)
+
+[node name="mushroom" parent="props2" instance=ExtResource("6_8e0th")]
+position = Vector2(306, 243)
+
+[node name="mushroom2" parent="props2" instance=ExtResource("6_8e0th")]
+position = Vector2(1000, 277)
+
+[node name="mushroom3" parent="props2" instance=ExtResource("6_8e0th")]
+position = Vector2(380, 278)
+
+[node name="mushroom4" parent="props2" instance=ExtResource("6_8e0th")]
+position = Vector2(984, 278)
+flip_h = true
+
+[node name="mushroom5" parent="props2" instance=ExtResource("6_8e0th")]
+position = Vector2(430, 276)
+flip_h = true
+
+[node name="mushroom6" parent="props2" instance=ExtResource("6_8e0th")]
+position = Vector2(461, 315)
+scale = Vector2(0.8, 0.8)
+
+[node name="mushroom7" parent="props2" instance=ExtResource("6_8e0th")]
+position = Vector2(330, 247)
+scale = Vector2(0.8, 0.8)
+speed_scale = 1.2
+flip_h = true
+
+[node name="mushroom8" parent="props2" instance=ExtResource("6_8e0th")]
+position = Vector2(270.00003, 216)
+scale = Vector2(0.8, 0.8)
+speed_scale = 1.2
+flip_h = true
+
+[node name="plant12" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(284, 247)
+flip_h = true
+
+[node name="plant13" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(373, 247)
+flip_h = true
+
+[node name="plant14" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(351, 244)
+speed_scale = 2.0
+
+[node name="plant15" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(405, 277)
+speed_scale = 1.4
+
+[node name="plant16" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(408, 170)
+speed_scale = 1.4
+flip_v = true
+
+[node name="plant17" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(327, 171)
+speed_scale = 1.4
+flip_h = true
+flip_v = true
+
+[node name="plant18" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(1095, 274)
+speed_scale = 1.4
+
+[node name="plant19" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(1103, 274)
+speed_scale = 1.4
+flip_h = true
+
+[node name="plant20" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(1118, 275)
+speed_scale = 1.4
+flip_h = true
+
+[node name="plant21" parent="props2" instance=ExtResource("6_ng8wm")]
+position = Vector2(939, 310)
+speed_scale = 1.4
+flip_h = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAIAAAAVAAAAAAABAAIAAAAVAAAAAAACAAIAAAAVAAAAAAADAAIAAAATAAAAAAADAAMAAAAWAAQAAAADAAQAAAAUAAMAAAAEAAQAAAAVAAAAAAAFAAQAAAAVAAAAAAAGAAQAAAAVAAAAAAAHAAQAAAAVAAAAAAAIAAQAAAATAAAAAAAIAAUAAAAWAAQAAAAIAAYAAAAWAAQAAAAIAAcAAAAWAAQAAAAIAAgAAAAWAAEAAAAJAAgAAAARAAUAAAAKAAgAAAARAAUAAAALAAgAAAARAAUAAAAMAAgAAAARAAUAAAANAAgAAAARAAUAAAAOAAgAAAARAAUAAAAPAAgAAAARAAUAAAAQAAgAAAATAAIAAAAQAAcAAAATAAMAAAAQAAYAAAAUAAAAAAARAAYAAAAVAAAAAAASAAYAAAAUAAEAAAASAAUAAAAUAAAAAAATAAUAAAAUAAEAAAATAAQAAAAUAAAAAAAUAAQAAAAUAAEAAAAUAAMAAAATAAMAAAAUAAIAAAAUAAAAAAAVAAIAAAAVAAAAAAAWAAIAAAAVAAAAAAAXAAIAAAATAAAAAAACAAMAAAAUAAQAAAABAAMAAAAVAAUAAAAAAAMAAAAVAAUAAAACAAQAAAATAAMAAAACAAUAAAAUAAUAAAADAAUAAAAVAAUAAAAEAAUAAAAVAAUAAAAFAAUAAAAVAAUAAAAGAAUAAAAVAAUAAAAHAAUAAAAUAAQAAAAHAAYAAAATAAMAAAAHAAcAAAATAAMAAAAHAAgAAAATAAMAAAAHAAkAAAAUAAUAAAAIAAkAAAATAAUAAAAQAAkAAAAUAAUAAAARAAkAAAATAAUAAAARAAgAAAAWAAQAAAARAAcAAAAUAAIAAAASAAcAAAAVAAUAAAATAAcAAAATAAUAAAATAAYAAAAUAAIAAAAUAAYAAAATAAUAAAAUAAUAAAAUAAIAAAAVAAUAAAATAAUAAAAVAAQAAAAWAAQAAAAVAAMAAAAUAAIAAAAWAAMAAAAVAAUAAAAXAAMAAAATAAUAAAAbAAIAAAARAAAAAAAcAAIAAAARAAUAAAAdAAIAAAATAAIAAAAdAAAAAAATAAMAAAAdAAEAAAATAAMAAAAdAAMAAAATAAMAAAAdAAQAAAATAAMAAAAdAAUAAAAUAAEAAAAdAAYAAAAVAAQAAAAdAAcAAAAVAAEAAAAdAAgAAAAVAAQAAAAdAAkAAAAVAAQAAAAdAAoAAAAVAAEAAAAdAAsAAAAVAAQAAAAdAAwAAAAVAAQAAAAdAA0AAAAVAAUAAAAeAA0AAAATAAUAAAAeAAwAAAAWAAQAAAAeAAsAAAAWAAQAAAAeAAoAAAAWAAQAAAAeAAkAAAAWAAQAAAAeAAgAAAAWAAQAAAAeAAcAAAAWAAQAAAAeAAYAAAAWAAQAAAAeAAUAAAAWAAQAAAAeAAQAAAAWAAQAAAAeAAMAAAAWAAQAAAAeAAIAAAAWAAQAAAAeAAEAAAAWAAQAAAAeAAAAAAAWAAQAAAAeAP//AAATAAAAAAAdAP//AAASAAAAAAD/////AAAWAAAAAAD//wAAAAAWAAQAAAD//wEAAAAWAAQAAAD//wIAAAAUAAMAAAD//wMAAAAUAAIAAAD//wQAAAAWAAQAAAD//wUAAAAWAAQAAAD//wYAAAAWAAQAAAD//wcAAAAWAAQAAAD+////AAAUAAAAAAD+/wAAAAATAAMAAAD+/wEAAAATAAMAAAD+/wIAAAATAAMAAAD+/wMAAAATAAMAAAD+/wQAAAATAAMAAAD+/wUAAAATAAMAAAD+/wYAAAATAAMAAAD+/wcAAAATAAMAAAAcAAcAAAAVAAQAAAAbAAcAAAAUAAEAAAAaAAcAAAAVAAAAAAAZAAcAAAAVAAAAAAAYAAcAAAAUAAAAAAAcAAUAAAAUAAAAAAAcAAYAAAAUAAEAAAAbAAYAAAAUAAAAAAAYAAgAAAATAAMAAAAYAAkAAAAUAAUAAAAZAAkAAAAVAAUAAAAaAAkAAAAWAAIAAAAaAAoAAAAQAAUAAAAbAAoAAAASAAAAAAAbAAsAAAATAAMAAAAbAAwAAAAUAAEAAAAbAA0AAAAVAAUAAAAcAA0AAAAVAAUAAAAcAAwAAAAVAAEAAAAcAAsAAAAVAAQAAAAcAAoAAAAUAAEAAAAcAAkAAAATAAMAAAAcAAgAAAAUAAQAAAAbAAgAAAAVAAUAAAAaAAgAAAAUAAIAAAAZAAgAAAAVAAQAAAAaAAwAAAAVAAAAAAAZAAwAAAAVAAAAAAAYAAwAAAAVAAAAAAAXAAwAAAAVAAAAAAAWAAwAAAAVAAAAAAAVAAwAAAAVAAAAAAAUAAwAAAAVAAAAAAATAAwAAAAVAAAAAAASAAwAAAAVAAAAAAARAAwAAAAVAAAAAAAQAAwAAAAVAAAAAAAPAAwAAAAUAAAAAAAKAAwAAAATAAAAAAAJAAwAAAAVAAAAAAAIAAwAAAAVAAAAAAAHAAwAAAAVAAAAAAACAAwAAAATAAAAAAABAAwAAAAVAAAAAAAAAAwAAAAVAAAAAAAAAA0AAAAVAAUAAAABAA0AAAAVAAUAAAACAA0AAAATAAUAAAAHAA0AAAAVAAUAAAAIAA0AAAAVAAUAAAAJAA0AAAAVAAUAAAAKAA0AAAATAAUAAAAPAA0AAAAUAAUAAAAQAA0AAAAVAAUAAAARAA0AAAAVAAUAAAASAA0AAAAVAAUAAAATAA0AAAAVAAUAAAAUAA0AAAAVAAUAAAAVAA0AAAAVAAUAAAAWAA0AAAAVAAUAAAAXAA0AAAAVAAUAAAAYAA0AAAAVAAUAAAAZAA0AAAAVAAUAAAAaAA0AAAAVAAUAAAAGAAwAAAAVAAAAAAAGAA0AAAAVAAUAAAAFAAwAAAAUAAAAAAAFAA0AAAAUAAUAAAAMAAIAAAARAAAAAAANAAIAAAARAAUAAAAOAAIAAAARAAUAAAAPAAIAAAAXAAAAAAAQAP//AAASAAAAAAARAP//AAAVAAAAAAASAP//AAAVAAAAAAASAAAAAAAUAAIAAAARAAAAAAAUAAQAAAAQAAAAAAAUAAUAAAAPAP//AAARAAUAAAAOAP//AAARAAUAAAANAP//AAARAAUAAAAMAP//AAARAAUAAAALAP//AAARAAUAAAAKAP//AAARAAUAAAAJAP//AAARAAUAAAAIAP//AAARAAUAAAAHAP//AAARAAUAAAAGAP//AAARAAUAAAAFAP//AAARAAUAAAAEAP//AAARAAUAAAADAP//AAARAAUAAAACAP//AAARAAUAAAABAP//AAARAAUAAAAAAP//AAARAAUAAAATAP//AAAWAAAAAAAUAP//AAARAAUAAAAVAP//AAARAAUAAAAWAP//AAARAAUAAAAXAP//AAARAAUAAAAYAP//AAARAAUAAAAZAP//AAARAAUAAAAaAP//AAARAAUAAAAbAP//AAARAAUAAAAcAP//AAARAAUAAAARAAEAAAAUAAUAAAASAAEAAAATAAUAAAATAAAAAAATAAUAAAD+/wgAAAATAAMAAAD+/wkAAAATAAMAAAD+/woAAAATAAMAAAD+/wsAAAATAAMAAAD+/wwAAAATAAMAAAD+/w0AAAAUAAUAAAD//w0AAAAVAAUAAAD//wgAAAAWAAQAAAD//wsAAAAWAAQAAAD//woAAAAWAAQAAAD//wkAAAAWAAQAAAD//wwAAAAUAAMAAAA=")
 tile_set = ExtResource("2_wno2a")
+
+[node name="props" type="Node2D" parent="."]
+modulate = Color(0.7104485, 0.58416575, 0.7087789, 1)
+
+[node name="mushroom" parent="props" instance=ExtResource("6_8e0th")]
+position = Vector2(306, 242)
+
+[node name="mushroom2" parent="props" instance=ExtResource("6_8e0th")]
+position = Vector2(560, 179)
+
+[node name="mushroom3" parent="props" instance=ExtResource("6_8e0th")]
+position = Vector2(887, 50)
+
+[node name="mushroom4" parent="props" instance=ExtResource("6_8e0th")]
+position = Vector2(794, 210)
+flip_h = true
+
+[node name="mushroom5" parent="props" instance=ExtResource("6_8e0th")]
+position = Vector2(515, 371)
+flip_h = true
+
+[node name="mushroom6" parent="props" instance=ExtResource("6_8e0th")]
+position = Vector2(209, 373)
+scale = Vector2(0.8, 0.8)
+
+[node name="mushroom7" parent="props" instance=ExtResource("6_8e0th")]
+position = Vector2(330, 245)
+scale = Vector2(0.8, 0.8)
+speed_scale = 1.2
+flip_h = true
+
+[node name="mushroom8" parent="props" instance=ExtResource("6_8e0th")]
+position = Vector2(646, 118.00001)
+scale = Vector2(0.8, 0.8)
+speed_scale = 1.2
+flip_h = true
+
+[node name="plant" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(416, 242)
+
+[node name="plant4" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(319, 371)
+
+[node name="plant5" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(866, 371)
+
+[node name="plant6" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(876, 307)
+
+[node name="plant7" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(784, 211)
+
+[node name="plant8" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(879, 52)
+
+[node name="plant9" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(899, 54)
+flip_h = true
+
+[node name="plant10" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(18, 371)
+flip_h = true
+
+[node name="plant11" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(10, 310)
+rotation = 1.5707964
+flip_h = true
+
+[node name="plant2" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(491, 242)
+flip_h = true
+
+[node name="plant3" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(487, 246)
+scale = Vector2(0.8, 0.8)
+
+[node name="plant12" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(422, 54)
+scale = Vector2(0.8, 0.8)
+
+[node name="plant13" parent="props" instance=ExtResource("6_ng8wm")]
+position = Vector2(491, 10)
+scale = Vector2(0.8, 0.8)
+flip_v = true
 
 [node name="Player" parent="." instance=ExtResource("3_8wpmi")]
 position = Vector2(22, 71)
