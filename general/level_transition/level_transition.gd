@@ -53,8 +53,7 @@ func _on_new_scene_ready( target_name : String, offset : Vector2 ) -> void :
 func _on_load_scene_finished() -> void:
 	area.monitoring = false
 	area.body_entered.connect( _on_player_entered )
-	await get_tree().physics_frame
-	await get_tree().physics_frame
+	await get_tree().create_timer( 0.2 ).timeout
 	area.monitoring = true
 	pass
 
