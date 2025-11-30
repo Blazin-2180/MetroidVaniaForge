@@ -19,20 +19,11 @@ fill_from = Vector2(1, 1)
 
 [node name="01" type="Node2D"]
 
-[node name="levelbounds" type="Node2D" parent="."]
+[node name="level_bounds" type="Node2D" parent="."]
 z_index = 256
 script = ExtResource("1_1pu88")
 width = 1152
 metadata/_custom_type_script = "uid://c5507fl50k2y"
-
-[node name="level_transition" parent="." instance=ExtResource("4_vhcel")]
-position = Vector2(1152, 192)
-size = 8
-location = 1
-target_scene = "uid://bhkksbcdahbru"
-
-[node name="player" parent="." instance=ExtResource("2_1pu88")]
-position = Vector2(48, 232)
 
 [node name="background_sky" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0, 0)
@@ -130,3 +121,12 @@ collision_enabled = false
 
 [node name="bird" parent="." instance=ExtResource("7_72pnk")]
 position = Vector2(609, 172)
+
+[node name="level_transition" parent="." instance=ExtResource("4_vhcel")]
+position = Vector2(1152, 195)
+size = 8
+location = 1
+target_scene = "uid://bhkksbcdahbru"
+
+[node name="player" parent="." instance=ExtResource("2_1pu88")]
+position = Vector2(48, 232)

@@ -33,14 +33,14 @@ gravity = Vector3(0, 98, 0)
 
 [node name="01" type="Node2D"]
 
-[node name="LevelBounds" type="Node2D" parent="."]
+[node name="level_bounds" type="Node2D" parent="."]
 z_index = 256
 script = ExtResource("1_8wpmi")
 width = 960
 height = 430
 metadata/_custom_type_script = "uid://c5507fl50k2y"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="background" type="ColorRect" parent="."]
 offset_right = 961.0
 offset_bottom = 430.0
 color = Color(0, 0, 0, 1)
@@ -301,10 +301,10 @@ position = Vector2(491, 10)
 scale = Vector2(0.8, 0.8)
 flip_v = true
 
-[node name="player" parent="." instance=ExtResource("3_8wpmi")]
-position = Vector2(24, 72)
-
 [node name="level_transition" parent="." instance=ExtResource("9_xs4or")]
 position = Vector2(0, 72)
 target_scene = "uid://dd0r8bmlp7ubo"
 target_area_name = "level_transition2"
+
+[node name="player" parent="." instance=ExtResource("3_8wpmi")]
+position = Vector2(24, 72)

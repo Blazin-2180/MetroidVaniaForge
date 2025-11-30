@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_new_game_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://levels/00_forest/01.tscn")
+	get_tree().change_scene_to_file("uid://bhq5sxycj6wg0")
 	pass # Replace with function body.
 
 
@@ -26,6 +26,7 @@ func _on_settings_button_pressed() -> void:
 
 
 func _on_credits_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://title_scene/credits.tscn")
 	pass # Replace with function body.
 
 
