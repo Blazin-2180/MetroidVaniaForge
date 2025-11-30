@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3hgh3ieihsbh"]
+
+[ext_resource type="FontFile" uid="uid://mew76lrygsbu" path="res://assets/fonts/Goodlight-Light.otf" id="1_bl0uk"]
+[ext_resource type="Script" uid="uid://cuxn2syhl2x5w" path="res://title_scene/title_scene.gd" id="1_uvhto"]
+[ext_resource type="Texture2D" uid="uid://c6amey3h7ss55" path="res://title_scene/background.png" id="2_5xqkb"]
+
+[node name="title_scene" type="CanvasLayer"]
+script = ExtResource("1_uvhto")
+
+[node name="background_image" type="Sprite2D" parent="."]
+position = Vector2(178.00002, 124.00001)
+scale = Vector2(0.39699864, 0.39699864)
+texture = ExtResource("2_5xqkb")
+
+[node name="control_node" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="vertical_container" type="VBoxContainer" parent="control_node"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -20.0
+offset_right = 45.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="new_game_button" type="Button" parent="control_node/vertical_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "New Game"
+flat = true
+autowrap_trim_flags = 0
+
+[node name="continue_button" type="Button" parent="control_node/vertical_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Continue
+"
+flat = true
+
+[node name="settings_button" type="Button" parent="control_node/vertical_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Settings
+"
+flat = true
+
+[node name="credits_button" type="Button" parent="control_node/vertical_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Credits"
+flat = true
+
+[node name="exit_button" type="Button" parent="control_node/vertical_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Exit"
+flat = true
+
+[node name="Label" type="Label" parent="control_node"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 260.0
+offset_right = 113.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("1_bl0uk")
+theme_override_font_sizes/font_size = 4
+text = "MADE BY BLAZIN2180"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -49.0
+offset_top = 13.0
+offset_right = 49.0
+offset_bottom = 103.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 32
+text = "KINGDOM OF THE LOST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="control_node/vertical_container/new_game_button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="control_node/vertical_container/continue_button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="control_node/vertical_container/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="control_node/vertical_container/credits_button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="control_node/vertical_container/exit_button" to="." method="_on_exit_button_pressed"]

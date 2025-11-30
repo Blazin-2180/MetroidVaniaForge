@@ -14,7 +14,7 @@ fill = 2
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
-[node name="SceneManager" type="CanvasLayer"]
+[node name="scene_manager" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_yrwsn")
 
@@ -37,7 +37,8 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_xeycy")
 
 [node name="test_label" type="Label" parent="."]
-offset_left = 440.0
-offset_right = 480.0
-offset_bottom = 23.0
-text = "Test"
+offset_left = 421.0
+offset_top = 7.0
+offset_right = 475.0
+offset_bottom = 35.0
+text = "TEST"

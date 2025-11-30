@@ -27,9 +27,25 @@ window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
 
+[file_customization]
+
+folder_colors={
+"res://00_globals/": "red",
+"res://assets/": "orange",
+"res://general/": "teal",
+"res://levels/": "yellow",
+"res://player/": "green",
+"res://scenes/": "blue",
+"res://title_scene/": "purple"
+}
+
 [global_group]
 
 player=""
+
+[gui]
+
+theme/custom_font="uid://rrijo2ob8sb1"
 
 [input]
 

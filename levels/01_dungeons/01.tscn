@@ -15,6 +15,17 @@ script = ExtResource("1_s3mq1")
 width = 928
 metadata/_custom_type_script = "uid://c5507fl50k2y"
 
+[node name="level_transition" parent="." instance=ExtResource("5_l4ehx")]
+size = 4
+location = 2
+target_scene = "uid://bhkksbcdahbru"
+target_area_name = "level_transition2"
+
+[node name="level_transition2" parent="." instance=ExtResource("5_l4ehx")]
+position = Vector2(803, 32)
+location = 1
+target_scene = "uid://c7svy1iit0lho"
+
 [node name="player" parent="." instance=ExtResource("2_8nu6c")]
 z_index = 2
 position = Vector2(182, 62)
@@ -104,14 +115,3 @@ modulate = Color(0.11983502, 0.11983502, 0.11983502, 1)
 position = Vector2(21, 1)
 tile_map_data = PackedByteArray("AAAWAAAAAgABAAEAAAAWAAEAAgABAAEAAAAWAAIAAgABAAIAAAA=")
 tile_set = ExtResource("6_lnmrk")
-
-[node name="level_transition" parent="." instance=ExtResource("5_l4ehx")]
-size = 4
-location = 2
-target_scene = "uid://bhkksbcdahbru"
-target_area_name = "level_transition2"
-
-[node name="level_transition2" parent="." instance=ExtResource("5_l4ehx")]
-position = Vector2(803, 32)
-location = 1
-target_scene = "uid://c7svy1iit0lho"
