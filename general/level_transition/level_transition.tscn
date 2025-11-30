@@ -5,10 +5,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gers1"]
 size = Vector2(32, 32)
 
-[node name="level_transition" type="Node2D"]
+[node name="level_transition" type="Node2D" groups=["player"]]
 script = ExtResource("1_d5xbk")
-target_level = null
-target_area_name = null
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuq57ag16ri10"]
+
+[ext_resource type="Texture2D" uid="uid://edmuqxmarep8" path="res://levels/tilesets/sprites/blazin_tileset.png" id="1_hukuy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sv46"]
+atlas = ExtResource("1_hukuy")
+region = Rect2(864, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08onm"]
+atlas = ExtResource("1_hukuy")
+region = Rect2(896, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jd6w"]
+atlas = ExtResource("1_hukuy")
+region = Rect2(928, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b436d"]
+atlas = ExtResource("1_hukuy")
+region = Rect2(960, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkg5w"]
+atlas = ExtResource("1_hukuy")
+region = Rect2(992, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ms1o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sv46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08onm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jd6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b436d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkg5w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="campfire" type="AnimatedSprite2D"]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_ms1o8")
+autoplay = "default"
+frame_progress = 0.7429759

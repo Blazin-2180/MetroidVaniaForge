@@ -50,7 +50,7 @@ func _on_new_scene_ready( target_name : String, offset : Vector2 ) -> void :
 	pass
 
 
-func _on_load_scene_finished() -> void :
+func _on_load_scene_finished() -> void:
 	area.monitoring = false
 	area.body_entered.connect( _on_player_entered )
 	await get_tree().physics_frame
@@ -58,54 +58,54 @@ func _on_load_scene_finished() -> void :
 	area.monitoring = true
 	pass
 
-# Update the size and location of the level transition area
-func apply_area_settings() -> void :
+
+func apply_area_settings() -> void:
 	area = get_node_or_null( "Area2D" )
-	if !area : 
+	if not area:
 		return
-	if location == SIDE.LEFT or location == SIDE.RIGHT :
+	if location == SIDE.LEFT or location == SIDE.RIGHT:
 		area.scale.y = size
-		if location == SIDE.LEFT :
+		if location == SIDE.LEFT:
 			area.scale.x = -1
-		else : 
+		else:
 			area.scale.x = 1
-	else :
+	else:
 		area.scale.x = size
-		if location == SIDE.UP :
+		if location == SIDE.UP:
 			area.scale.y = 1
-		else : 
+		else:
 			area.scale.y = -1
 	pass
 
-func get_offset( player : Node2D ) -> Vector2 :
+
+func get_offset( player : Node2D ) -> Vector2:
 	var offset : Vector2 = Vector2.ZERO
-	var player_position : Vector2 = player.global_position
+	var player_pos : Vector2 = player.global_position
 	
-	#Calculate offset depending on the entrance (left, right, up, down)
-	if location == SIDE.LEFT or location == SIDE.RIGHT :
-		# Make it so that the player enters scene in the same area as they left the prev one. 
-		offset.y = player_position.y - self.global_position.y
-		
-		if location == SIDE.LEFT : 
+	if location == SIDE.LEFT or location == SIDE.RIGHT:
+		offset.y = player_pos.y - self.global_position.y
+		if location == SIDE.LEFT:
 			offset.x = -12
-		else : 
+		else:
 			offset.x = 12
-	else : 
-		offset.x = player_position.x - self.global_position.x
-		if location == SIDE.UP : 
+	else:
+		offset.x = player_pos.x - self.global_position.x
+		if location == SIDE.UP:
 			offset.y = -2
-		else : 
+		else:
 			offset.y = 48
+	
 	return offset
 
 
-func get_transition_direction() -> String : 
-	match location :
-		SIDE.LEFT :
-			return "Left"
-		SIDE.RIGHT : 
-			return "Right"
-		SIDE.UP :
-			return "Up"
+
+func get_transition_direction() -> String:
+	match location:
+		SIDE.LEFT:
+			return "left"
+		SIDE.RIGHT:
+			return "right"
+		SIDE.UP:
+			return "up"
 		_:
-			return "Down"
+			return "down"
