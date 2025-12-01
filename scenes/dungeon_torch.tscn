@@ -55,13 +55,16 @@ fill_to = Vector2(1, 0.5)
 texture = ExtResource("1_eea26")
 hframes = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="animation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_khufk")
 }
 autoplay = "torch"
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="light" type="PointLight2D" parent="."]
 position = Vector2(0, -4)
+energy = 2.15
 texture = SubResource("GradientTexture2D_bk5vh")
 script = ExtResource("2_ck65o")
+flicker_intensity = 0.3
+flicker_frequency = 0.1
