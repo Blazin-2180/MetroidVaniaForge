@@ -143,7 +143,7 @@ autoplay = "activated"
 
 [node name="parallax_foreground" type="Parallax2D" parent="."]
 modulate = Color(0.05882353, 0.078431375, 0.0627451, 1)
-z_index = 10
+z_index = 11
 scroll_scale = Vector2(1.4, 1)
 
 [node name="foreground" type="TileMapLayer" parent="parallax_foreground"]
