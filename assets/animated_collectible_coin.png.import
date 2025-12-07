@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1yj6i5evs763"
-path="res://.godot/imported/cart.png-b95ccd610e61ee24866932efdb5124c9.ctex"
+uid="uid://dtj4tofy3t54p"
+path="res://.godot/imported/animated_collectible_coin.png-7cf307a52ebcb2ec0f0f235e87dd6d94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cart.png"
-dest_files=["res://.godot/imported/cart.png-b95ccd610e61ee24866932efdb5124c9.ctex"]
+source_file="res://assets/animated_collectible_coin.png"
+dest_files=["res://.godot/imported/animated_collectible_coin.png-7cf307a52ebcb2ec0f0f235e87dd6d94.ctex"]
 
 [params]
 

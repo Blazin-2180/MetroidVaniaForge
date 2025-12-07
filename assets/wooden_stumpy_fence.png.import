@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4gkfhu8k8kg0"
-path="res://.godot/imported/sign.png-ce1750a0a91cc7aa81e844b4d838bf25.ctex"
+uid="uid://dmcommw6ecjgv"
+path="res://.godot/imported/wooden_stumpy_fence.png-3831c52cbc7e5593d749228e865793b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sign.png"
-dest_files=["res://.godot/imported/sign.png-ce1750a0a91cc7aa81e844b4d838bf25.ctex"]
+source_file="res://assets/wooden_stumpy_fence.png"
+dest_files=["res://.godot/imported/wooden_stumpy_fence.png-3831c52cbc7e5593d749228e865793b3.ctex"]
 
 [params]
 

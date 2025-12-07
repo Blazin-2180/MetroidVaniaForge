@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crgs7jknce418"
-path="res://.godot/imported/dungeon_torch.png-2edfdc8de1c07c256d32ad95934ff3b4.ctex"
+uid="uid://dr6lnvqdmlibu"
+path="res://.godot/imported/wooden_crate.png-2a66ff1cc1fd850230629a06cfad2d27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dungeon_torch.png"
-dest_files=["res://.godot/imported/dungeon_torch.png-2edfdc8de1c07c256d32ad95934ff3b4.ctex"]
+source_file="res://assets/wooden_crate.png"
+dest_files=["res://.godot/imported/wooden_crate.png-2a66ff1cc1fd850230629a06cfad2d27.ctex"]
 
 [params]
 

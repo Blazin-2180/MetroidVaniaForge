@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://c7svy1iit0lho"]
+[gd_scene load_steps=25 format=4 uid="uid://c7svy1iit0lho"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_8wpmi"]
 [ext_resource type="TileSet" uid="uid://k10vewo52x0l" path="res://levels/tilesets/caves_test.tres" id="2_wno2a"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bg12pesha41hr" path="res://levels/props/plant.tscn" id="6_ng8wm"]
 [ext_resource type="PackedScene" uid="uid://cgawoyogixas1" path="res://general/level_transition/level_transition.tscn" id="9_xs4or"]
 [ext_resource type="Texture2D" uid="uid://dnl3kc538jq72" path="res://assets/light_stream.jpg" id="10_e7cok"]
+[ext_resource type="Script" uid="uid://baco6g2y4w2hd" path="res://levels/scripts/death_area.gd" id="11_0ox2b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkaa2"]
 atlas = ExtResource("4_hkaa2")
@@ -72,6 +73,9 @@ hue_variation_min = -2.2351742e-08
 hue_variation_max = 0.049999975
 turbulence_enabled = true
 turbulence_influence_max = 0.19000001
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsh3o"]
+size = Vector2(960, 35)
 
 [node name="01" type="Node2D"]
 
@@ -161,6 +165,7 @@ modulate = Color(0.98199487, 0.51037174, 0.9303283, 1)
 position = Vector2(363, -4)
 amount = 20
 lifetime = 22.180000000000003
+randomness = 0.2
 visibility_rect = Rect2(-100, -100, 960, 200)
 process_material = SubResource("ParticleProcessMaterial_ng8wm")
 
@@ -169,6 +174,7 @@ modulate = Color(0.98199487, 0.51037174, 0.9303283, 1)
 position = Vector2(686, -1)
 amount = 20
 lifetime = 22.180000000000003
+randomness = 0.3
 visibility_rect = Rect2(-100, -100, 960, 200)
 process_material = SubResource("ParticleProcessMaterial_ng8wm")
 
@@ -372,3 +378,12 @@ texture = SubResource("GradientTexture2D_jsh3o")
 lifetime = 5.0
 randomness = 0.85
 process_material = SubResource("ParticleProcessMaterial_tfp1b")
+
+[node name="death_area" type="Area2D" parent="."]
+script = ExtResource("11_0ox2b")
+
+[node name="death_collision_area" type="CollisionShape2D" parent="death_area"]
+position = Vector2(480, 446.5)
+shape = SubResource("RectangleShape2D_jsh3o")
+
+[connection signal="area_entered" from="death_area" to="death_area" method="_on_area_entered"]

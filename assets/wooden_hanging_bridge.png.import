@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwp6yfnmxkgdn"
-path="res://.godot/imported/Untitled 84.png-1ac00b3e2560830a60c2311bb753726f.ctex"
+uid="uid://c8q8itqd2yv3f"
+path="res://.godot/imported/wooden_hanging_bridge.png-9cb006d54c1a42a8ba6e2fb27c7a5d74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Untitled 84.png"
-dest_files=["res://.godot/imported/Untitled 84.png-1ac00b3e2560830a60c2311bb753726f.ctex"]
+source_file="res://assets/wooden_hanging_bridge.png"
+dest_files=["res://.godot/imported/wooden_hanging_bridge.png-9cb006d54c1a42a8ba6e2fb27c7a5d74.ctex"]
 
 [params]
 

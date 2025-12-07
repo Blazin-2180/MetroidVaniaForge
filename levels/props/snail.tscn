@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqtvierjoat7o"]
+
+[ext_resource type="Texture2D" uid="uid://bhujrdqrm7sw3" path="res://assets/animated_creature_snail.png" id="1_yet0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkg5w"]
+atlas = ExtResource("1_yet0d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms1o8"]
+atlas = ExtResource("1_yet0d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml442"]
+atlas = ExtResource("1_yet0d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehywu"]
+atlas = ExtResource("1_yet0d")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gj8om"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkg5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms1o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml442")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehywu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="snail" type="AnimatedSprite2D"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gj8om")
+autoplay = "default"
+frame_progress = 0.07012575

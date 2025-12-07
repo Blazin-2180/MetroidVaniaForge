@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx1efbden3taf"
-path="res://.godot/imported/save_point.png-ef4b8f97ccd1fcf94da482312062cbfc.ctex"
+uid="uid://cwp6yfnmxkgdn"
+path="res://.godot/imported/wooden_slim_ledge.png-12fbfa65e4ddc90a85dd668ab5bbd2ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/save_point.png"
-dest_files=["res://.godot/imported/save_point.png-ef4b8f97ccd1fcf94da482312062cbfc.ctex"]
+source_file="res://assets/wooden_slim_ledge.png"
+dest_files=["res://.godot/imported/wooden_slim_ledge.png-12fbfa65e4ddc90a85dd668ab5bbd2ae.ctex"]
 
 [params]
 

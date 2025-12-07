@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b774pasjaod6f"]
 
-[ext_resource type="Texture2D" uid="uid://crgs7jknce418" path="res://assets/dungeon_torch_test2.png" id="1_eea26"]
+[ext_resource type="Texture2D" uid="uid://crgs7jknce418" path="res://assets/dungeon_torch.png" id="1_eea26"]
 [ext_resource type="Script" uid="uid://c1veuoyoiwhw0" path="res://levels/01_dungeons/dungeon_torch_flicker.gd" id="2_ck65o"]
 
 [sub_resource type="Animation" id="Animation_gjg20"]

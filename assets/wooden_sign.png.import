@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciaoueq76hqbx"
-path="res://.godot/imported/quest_board.png-cbd41c805c28cbc7b15fd4bfcb78e803.ctex"
+uid="uid://4gkfhu8k8kg0"
+path="res://.godot/imported/wooden_sign.png-df96a17502eb67f6fb314745939fb595.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/quest_board.png"
-dest_files=["res://.godot/imported/quest_board.png-cbd41c805c28cbc7b15fd4bfcb78e803.ctex"]
+source_file="res://assets/wooden_sign.png"
+dest_files=["res://.godot/imported/wooden_sign.png-df96a17502eb67f6fb314745939fb595.ctex"]
 
 [params]
 

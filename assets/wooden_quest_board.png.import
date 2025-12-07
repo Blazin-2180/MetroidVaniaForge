@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgsai0rghc0yl"
-path="res://.godot/imported/signpost.png-ed4a545350ac767de53c828b3da89863.ctex"
+uid="uid://ciaoueq76hqbx"
+path="res://.godot/imported/wooden_quest_board.png-bcd19a1dc69161b85e5e72362bc24725.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/signpost.png"
-dest_files=["res://.godot/imported/signpost.png-ed4a545350ac767de53c828b3da89863.ctex"]
+source_file="res://assets/wooden_quest_board.png"
+dest_files=["res://.godot/imported/wooden_quest_board.png-bcd19a1dc69161b85e5e72362bc24725.ctex"]
 
 [params]
 

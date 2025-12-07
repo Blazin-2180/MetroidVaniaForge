@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deserttbm8pwy"
-path="res://.godot/imported/dungeon_torch_test1.png-9f1ab10c6eb9f6a802fc3e6486f5b9ab.ctex"
+uid="uid://dhncstruxe03y"
+path="res://.godot/imported/animate_beehive.png-acac32ea19f6acb1fbf47ab1ff9c6f89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dungeon_torch_test1.png"
-dest_files=["res://.godot/imported/dungeon_torch_test1.png-9f1ab10c6eb9f6a802fc3e6486f5b9ab.ctex"]
+source_file="res://assets/animate_beehive.png"
+dest_files=["res://.godot/imported/animate_beehive.png-acac32ea19f6acb1fbf47ab1ff9c6f89.ctex"]
 
 [params]
 

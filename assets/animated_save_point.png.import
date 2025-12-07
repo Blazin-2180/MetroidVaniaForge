@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crgs7jknce418"
-path="res://.godot/imported/dungeon_torch_test2.png-56338939d2ff5fcf5a00167f4a509905.ctex"
+uid="uid://bx1efbden3taf"
+path="res://.godot/imported/animated_save_point.png-8e192717da823dbb85782539fc706656.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dungeon_torch_test2.png"
-dest_files=["res://.godot/imported/dungeon_torch_test2.png-56338939d2ff5fcf5a00167f4a509905.ctex"]
+source_file="res://assets/animated_save_point.png"
+dest_files=["res://.godot/imported/animated_save_point.png-8e192717da823dbb85782539fc706656.ctex"]
 
 [params]
 

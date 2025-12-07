@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr6lnvqdmlibu"
-path="res://.godot/imported/crate.png-b083c7143ec8103676df154d007e744f.ctex"
+uid="uid://cgsai0rghc0yl"
+path="res://.godot/imported/wooden_signpost.png-6d4027a84ba45bd09dc91a7e85e3ceda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/crate.png"
-dest_files=["res://.godot/imported/crate.png-b083c7143ec8103676df154d007e744f.ctex"]
+source_file="res://assets/wooden_signpost.png"
+dest_files=["res://.godot/imported/wooden_signpost.png-6d4027a84ba45bd09dc91a7e85e3ceda.ctex"]
 
 [params]
 

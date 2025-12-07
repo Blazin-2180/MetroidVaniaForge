@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmcommw6ecjgv"
-path="res://.godot/imported/stumpy_fence.png-b9df1b8b8547e006be595ff6700fa7af.ctex"
+uid="uid://ci4wv06wam847"
+path="res://.godot/imported/wooden_benches.png-77a7478c09cefa4a9f1e739823aefa52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stumpy_fence.png"
-dest_files=["res://.godot/imported/stumpy_fence.png-b9df1b8b8547e006be595ff6700fa7af.ctex"]
+source_file="res://assets/wooden_benches.png"
+dest_files=["res://.godot/imported/wooden_benches.png-77a7478c09cefa4a9f1e739823aefa52.ctex"]
 
 [params]
 

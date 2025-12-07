@@ -1,16 +1,19 @@
-[gd_scene load_steps=17 format=4 uid="uid://bhq5sxycj6wg0"]
+[gd_scene load_steps=25 format=4 uid="uid://bhq5sxycj6wg0"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_1pu88"]
 [ext_resource type="TileSet" uid="uid://cdnhj6tmfyl6t" path="res://levels/tilesets/forgotten_forest.tres" id="1_pu3y4"]
 [ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="2_1pu88"]
 [ext_resource type="TileSet" uid="uid://bdvouuo584vn7" path="res://levels/tilesets/blazins_tileset.tres" id="3_chwhs"]
 [ext_resource type="PackedScene" uid="uid://cgawoyogixas1" path="res://general/level_transition/level_transition.tscn" id="4_vhcel"]
-[ext_resource type="Texture2D" uid="uid://cgsai0rghc0yl" path="res://assets/signpost.png" id="5_qmxb0"]
+[ext_resource type="Texture2D" uid="uid://cgsai0rghc0yl" path="res://assets/wooden_signpost.png" id="5_qmxb0"]
 [ext_resource type="PackedScene" uid="uid://bwcysqsxn21tb" path="res://levels/props/bird.tscn" id="7_72pnk"]
 [ext_resource type="Texture2D" uid="uid://dnl3kc538jq72" path="res://assets/light_stream.jpg" id="8_vdj2u"]
-[ext_resource type="Texture2D" uid="uid://b4vl88td36b75" path="res://assets/Untitled 82.png" id="9_08onm"]
-[ext_resource type="Texture2D" uid="uid://ciaoueq76hqbx" path="res://assets/quest_board.png" id="10_7jd6w"]
+[ext_resource type="Texture2D" uid="uid://b4vl88td36b75" path="res://assets/wooden_chest.png" id="9_08onm"]
+[ext_resource type="Texture2D" uid="uid://ciaoueq76hqbx" path="res://assets/wooden_quest_board.png" id="10_7jd6w"]
 [ext_resource type="Script" uid="uid://c1veuoyoiwhw0" path="res://levels/01_dungeons/dungeon_torch_flicker.gd" id="11_7jd6w"]
+[ext_resource type="PackedScene" uid="uid://bl67ynk2dgneh" path="res://levels/props/beehive.tscn" id="12_ms1o8"]
+[ext_resource type="PackedScene" uid="uid://bqtvierjoat7o" path="res://levels/props/snail.tscn" id="13_ms1o8"]
+[ext_resource type="Texture2D" uid="uid://dtj4tofy3t54p" path="res://assets/animated_collectible_coin.png" id="14_ms1o8"]
 
 [sub_resource type="Gradient" id="Gradient_chwhs"]
 colors = PackedColorArray(0.27450982, 0.44705883, 0.52156866, 1, 0.27450982, 0.44705883, 0.5176471, 0)
@@ -35,6 +38,59 @@ height = 32
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml442"]
+atlas = ExtResource("14_ms1o8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehywu"]
+atlas = ExtResource("14_ms1o8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj8om"]
+atlas = ExtResource("14_ms1o8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5ntm"]
+atlas = ExtResource("14_ms1o8")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ebujr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml442")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehywu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj8om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5ntm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml442")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehywu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj8om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5ntm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
 
 [node name="01" type="Node2D"]
 
@@ -231,3 +287,18 @@ texture = ExtResource("10_7jd6w")
 position = Vector2(1079, 107)
 texture = SubResource("GradientTexture2D_tkg5w")
 script = ExtResource("11_7jd6w")
+
+[node name="beehive" parent="." instance=ExtResource("12_ms1o8")]
+position = Vector2(333, 103)
+
+[node name="snail" parent="." instance=ExtResource("13_ms1o8")]
+position = Vector2(508, 93)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(193.99998, 157)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_ebujr")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.8392279
