@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxloavnajomxt"]
+
+[ext_resource type="Texture2D" uid="uid://ccs2a7ksgqxve" path="res://assets/animated_heal_point.png" id="1_ruo65"]
+[ext_resource type="Script" uid="uid://c1veuoyoiwhw0" path="res://levels/01_dungeons/dungeon_torch_flicker.gd" id="2_27dk8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27dk8"]
+atlas = ExtResource("1_ruo65")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pjxt"]
+atlas = ExtResource("1_ruo65")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ae532"]
+atlas = ExtResource("1_ruo65")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt8r4"]
+atlas = ExtResource("1_ruo65")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa7r1"]
+atlas = ExtResource("1_ruo65")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d6obv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27dk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pjxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ae532")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt8r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qa7r1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_0pjxt"]
+offsets = PackedFloat32Array(0, 0.6933333, 1)
+colors = PackedColorArray(0.07058824, 1, 1, 1, 0.023529412, 0.38431373, 0.38431373, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ae532"]
+gradient = SubResource("Gradient_0pjxt")
+fill = 1
+fill_from = Vector2(0.5, 0.5233645)
+fill_to = Vector2(0.5233645, 0)
+
+[node name="heal_point" type="Node2D"]
+
+[node name="heal_point_sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d6obv")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(7, 5)
+texture = SubResource("GradientTexture2D_ae532")
+script = ExtResource("2_27dk8")

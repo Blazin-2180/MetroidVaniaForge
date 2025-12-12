@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://doltv4dyqy8ko"]
+
+[ext_resource type="Texture2D" uid="uid://ji6uirqlxqd7" path="res://assets/npc_bonbon.png" id="1_12o82"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tuox"]
+atlas = ExtResource("1_12o82")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5cbh"]
+atlas = ExtResource("1_12o82")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fy4p6"]
+atlas = ExtResource("1_12o82")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qecby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tuox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5cbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fy4p6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5cbh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="npc_bonbon" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qecby")
+autoplay = "default"
+frame_progress = 0.68928313

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bhkksbcdahbru"]
+[gd_scene load_steps=15 format=4 uid="uid://bhkksbcdahbru"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_uqe0m"]
 [ext_resource type="PackedScene" uid="uid://bl67ynk2dgneh" path="res://levels/props/beehive.tscn" id="3_152a0"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cgawoyogixas1" path="res://general/level_transition/level_transition.tscn" id="4_s2tn3"]
 [ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="5_o5ap7"]
 [ext_resource type="Texture2D" uid="uid://dnl3kc538jq72" path="res://assets/light_stream.jpg" id="6_tfgdr"]
+[ext_resource type="PackedScene" uid="uid://dxloavnajomxt" path="res://levels/props/heal_point.tscn" id="8_yy75x"]
+[ext_resource type="PackedScene" uid="uid://doltv4dyqy8ko" path="res://npc/npc_bonbon.tscn" id="9_lj4o7"]
 
 [sub_resource type="Animation" id="Animation_152a0"]
 length = 0.001
@@ -141,6 +143,7 @@ tile_map_data = PackedByteArray("AAAaAAUAAAAAAAAAAAAaAAYAAAAAAAEAAAAaAAcAAAAAAAI
 tile_set = ExtResource("3_epyyu")
 
 [node name="save_point" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(96, 200)
 texture = ExtResource("4_o5ap7")
 hframes = 6
@@ -247,3 +250,9 @@ rotation = 0.2617994
 scale = Vector2(1.0454551, 0.99999994)
 texture = ExtResource("6_tfgdr")
 offset = Vector2(0, 256)
+
+[node name="heal_point" parent="." instance=ExtResource("8_yy75x")]
+position = Vector2(118, 195)
+
+[node name="npc_bonbon" parent="." instance=ExtResource("9_lj4o7")]
+position = Vector2(286, 205)

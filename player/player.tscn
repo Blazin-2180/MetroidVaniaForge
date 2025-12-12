@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bfcejqxshiub5" path="res://player/states/state_jump.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://ds5hdsnwo8hxp" path="res://player/states/state_fall.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://3mbvv26tdkhn" path="res://player/states/state_crouch.gd" id="6_fhl08"]
-[ext_resource type="Texture2D" uid="uid://bd3upxpc4lv18" path="res://player/sprites/hero.png" id="7_boad6"]
+[ext_resource type="Texture2D" uid="uid://bwjx1njxoe4pd" path="res://player/sprites/animated_cob.png" id="7_boad6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_boad6"]
 radius = 8.0
@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [20, 21, 22, 23]
+"values": [16, 17, 18, 19]
 }
 
 [sub_resource type="Animation" id="Animation_boad6"]
@@ -93,7 +93,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [14, 15, 16, 17, 18, 19, 12, 13]
+"values": [8, 9, 10, 11, 12, 13, 14, 15]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hg6s5"]
@@ -142,8 +142,8 @@ script = ExtResource("6_fhl08")
 modulate = Color(0.73760307, 0.73760307, 0.73760307, 1)
 position = Vector2(0, -39)
 texture = ExtResource("7_boad6")
-hframes = 16
-vframes = 4
+hframes = 8
+vframes = 9
 frame = 1
 
 [node name="collision_stand" type="CollisionShape2D" parent="."]
