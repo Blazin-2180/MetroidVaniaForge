@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=4 uid="uid://bhq5sxycj6wg0"]
+[gd_scene load_steps=26 format=4 uid="uid://bhq5sxycj6wg0"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_1pu88"]
 [ext_resource type="TileSet" uid="uid://cdnhj6tmfyl6t" path="res://levels/tilesets/forgotten_forest.tres" id="1_pu3y4"]
-[ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="2_1pu88"]
 [ext_resource type="TileSet" uid="uid://bdvouuo584vn7" path="res://levels/tilesets/blazins_tileset.tres" id="3_chwhs"]
 [ext_resource type="PackedScene" uid="uid://cgawoyogixas1" path="res://general/level_transition/level_transition.tscn" id="4_vhcel"]
 [ext_resource type="Texture2D" uid="uid://cgsai0rghc0yl" path="res://assets/wooden_signpost.png" id="5_qmxb0"]
@@ -13,7 +12,9 @@
 [ext_resource type="Script" uid="uid://c1veuoyoiwhw0" path="res://levels/01_dungeons/dungeon_torch_flicker.gd" id="11_7jd6w"]
 [ext_resource type="PackedScene" uid="uid://bl67ynk2dgneh" path="res://levels/props/beehive.tscn" id="12_ms1o8"]
 [ext_resource type="PackedScene" uid="uid://bqtvierjoat7o" path="res://levels/props/snail.tscn" id="13_ms1o8"]
+[ext_resource type="PackedScene" uid="uid://deb35v4r2fcoi" path="res://player/player_spawn.tscn" id="14_ml442"]
 [ext_resource type="Texture2D" uid="uid://dtj4tofy3t54p" path="res://assets/animated_collectible_coin.png" id="14_ms1o8"]
+[ext_resource type="Script" uid="uid://cqiunltb6cmdc" path="res://player/player_spawn.gd" id="15_ml442"]
 
 [sub_resource type="Gradient" id="Gradient_chwhs"]
 colors = PackedColorArray(0.27450982, 0.44705883, 0.52156866, 1, 0.27450982, 0.44705883, 0.5176471, 0)
@@ -99,6 +100,16 @@ z_index = 256
 script = ExtResource("1_1pu88")
 width = 1152
 metadata/_custom_type_script = "uid://c5507fl50k2y"
+
+[node name="level_transition" parent="." instance=ExtResource("4_vhcel")]
+position = Vector2(1152, 195)
+size = 8
+location = 1
+target_scene = "uid://bhkksbcdahbru"
+
+[node name="player_spawn" parent="." instance=ExtResource("14_ml442")]
+position = Vector2(76, 216)
+script = ExtResource("15_ml442")
 
 [node name="background_sky" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0, 0)
@@ -270,15 +281,6 @@ collision_enabled = false
 [node name="bird" parent="." instance=ExtResource("7_72pnk")]
 position = Vector2(609, 172)
 
-[node name="level_transition" parent="." instance=ExtResource("4_vhcel")]
-position = Vector2(1152, 195)
-size = 8
-location = 1
-target_scene = "uid://bhkksbcdahbru"
-
-[node name="player" parent="." instance=ExtResource("2_1pu88")]
-position = Vector2(48, 232)
-
 [node name="quest_board" type="Sprite2D" parent="."]
 position = Vector2(1037, 76)
 texture = ExtResource("10_7jd6w")
@@ -295,7 +297,6 @@ position = Vector2(333, 103)
 position = Vector2(508, 93)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(193.99998, 157)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_ebujr")

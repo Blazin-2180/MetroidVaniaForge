@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://dd0r8bmlp7ubo"]
+[gd_scene load_steps=6 format=4 uid="uid://dd0r8bmlp7ubo"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_s3mq1"]
-[ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="2_8nu6c"]
 [ext_resource type="TileSet" uid="uid://cdnhj6tmfyl6t" path="res://levels/tilesets/forgotten_forest.tres" id="3_l4ehx"]
 [ext_resource type="PackedScene" uid="uid://b774pasjaod6f" path="res://scenes/dungeon_torch.tscn" id="4_8nu6c"]
 [ext_resource type="PackedScene" uid="uid://cgawoyogixas1" path="res://general/level_transition/level_transition.tscn" id="5_l4ehx"]
@@ -14,10 +13,6 @@ z_index = 256
 script = ExtResource("1_s3mq1")
 width = 928
 metadata/_custom_type_script = "uid://c5507fl50k2y"
-
-[node name="player" parent="." instance=ExtResource("2_8nu6c")]
-z_index = 2
-position = Vector2(182, 62)
 
 [node name="level_area_collision" type="TileMapLayer" parent="."]
 modulate = Color(0.48316562, 0.57467526, 0.45740885, 1)

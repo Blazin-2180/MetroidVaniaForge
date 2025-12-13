@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=4 uid="uid://bhkksbcdahbru"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_uqe0m"]
+[ext_resource type="Script" uid="uid://cqiunltb6cmdc" path="res://player/player_spawn.gd" id="2_lj4o7"]
 [ext_resource type="PackedScene" uid="uid://bl67ynk2dgneh" path="res://levels/props/beehive.tscn" id="3_152a0"]
 [ext_resource type="TileSet" uid="uid://cdnhj6tmfyl6t" path="res://levels/tilesets/forgotten_forest.tres" id="3_epyyu"]
 [ext_resource type="Texture2D" uid="uid://bx1efbden3taf" path="res://assets/animated_save_point.png" id="4_o5ap7"]
 [ext_resource type="PackedScene" uid="uid://cgawoyogixas1" path="res://general/level_transition/level_transition.tscn" id="4_s2tn3"]
-[ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="5_o5ap7"]
 [ext_resource type="Texture2D" uid="uid://dnl3kc538jq72" path="res://assets/light_stream.jpg" id="6_tfgdr"]
 [ext_resource type="PackedScene" uid="uid://dxloavnajomxt" path="res://levels/props/heal_point.tscn" id="8_yy75x"]
 [ext_resource type="PackedScene" uid="uid://doltv4dyqy8ko" path="res://npc/npc_bonbon.tscn" id="9_lj4o7"]
@@ -75,6 +75,22 @@ z_index = 256
 script = ExtResource("1_uqe0m")
 width = 1920
 metadata/_custom_type_script = "uid://c5507fl50k2y"
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(23, 229)
+script = ExtResource("2_lj4o7")
+metadata/_custom_type_script = "uid://cqiunltb6cmdc"
+
+[node name="level_transition" parent="." instance=ExtResource("4_s2tn3")]
+position = Vector2(0, 232)
+size = 8
+target_scene = "uid://bhq5sxycj6wg0"
+
+[node name="level_transition2" parent="." instance=ExtResource("4_s2tn3")]
+position = Vector2(688, 270)
+size = 4
+location = 3
+target_scene = "uid://dd0r8bmlp7ubo"
 
 [node name="parallax_1" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.2, 1)
@@ -165,20 +181,6 @@ z_index = 1
 tile_map_data = PackedByteArray("AAAMAAYAAAAXAAkAAAAMAAcAAAAXAAoAAAAMAAgAAAAXAAsAAAAMAAkAAAAXAAwAAAAMAAoAAAAXAA0AAAANAAYAAAAYAAkAAAANAAcAAAAYAAoAAAANAAgAAAAYAAsAAAANAAkAAAAYAAwAAAANAAoAAAAYAA0AAAANAAsAAAAYAA4AAAANAAwAAAAYAA8AAAAOAAcAAAAZAAoAAAAOAAgAAAAZAAsAAAAOAAkAAAAZAAwAAAAOAAoAAAAZAA0AAAAJAAUAAAAXAAkAAAAJAAYAAAAXAAoAAAAJAAcAAAAXAAsAAAAJAAgAAAAXAAwAAAAJAAkAAAAXAA0AAAAKAAUAAAAYAAkAAAAKAAYAAAAYAAoAAAAKAAcAAAAYAAsAAAAKAAgAAAAYAAwAAAAKAAkAAAAYAA0AAAAKAAoAAAAYAA4AAAAKAAsAAAAYAA8AAAALAAYAAAAZAAoAAAALAAcAAAAZAAsAAAALAAgAAAAZAAwAAAALAAkAAAAZAA0AAAAeAAoAAAAYAAEAAAAfAAoAAAAZAAUAAAAgAAoAAAAZAAUAAAAhAAkAAAAcAAAAAAAhAAoAAAAaAAUAAAAiAAkAAAAdAAAAAAAiAAoAAAAdAAUAAAAjAAcAAAAcAAAAAAAjAAgAAAAbAAMAAAAjAAkAAAAcAAEAAAAjAAoAAAAdAAUAAAAkAAcAAAAdAAAAAAAkAAgAAAAdAAQAAAAkAAkAAAAdAAEAAAAkAAoAAAAdAAUAAAAlAAcAAAAdAAAAAAAlAAgAAAAdAAQAAAAlAAkAAAAdAAQAAAAlAAoAAAAdAAUAAAAmAAcAAAAdAAAAAAAmAAgAAAAdAAEAAAAmAAkAAAAdAAEAAAAmAAoAAAAdAAUAAAAnAAcAAAAdAAAAAAAnAAgAAAAdAAQAAAAnAAkAAAAdAAQAAAAnAAoAAAAdAAUAAAAoAAYAAAAcAAAAAAAoAAcAAAAcAAEAAAAoAAgAAAAdAAEAAAAoAAkAAAAdAAQAAAAoAAoAAAAdAAUAAAApAAcAAAAdAAEAAAApAAgAAAAdAAEAAAApAAkAAAAdAAQAAAApAAoAAAAdAAUAAAAqAAcAAAAdAAQAAAAqAAgAAAAdAAQAAAAqAAkAAAAdAAQAAAAqAAoAAAAdAAUAAAArAAgAAAAdAAEAAAArAAkAAAAdAAEAAAArAAoAAAAdAAUAAAAsAAgAAAAdAAEAAAAsAAkAAAAdAAQAAAAsAAoAAAAdAAUAAAAtAAkAAAAdAAQAAAAtAAoAAAAdAAUAAAApAAYAAAAdAAAAAAAqAAYAAAAdAAAAAAArAAYAAAAdAAAAAAArAAcAAAAdAAEAAAAsAAYAAAAdAAAAAAAsAAcAAAAdAAQAAAAtAAYAAAAdAAAAAAAtAAcAAAAdAAQAAAAtAAgAAAAdAAEAAAAuAAYAAAAdAAAAAAAuAAcAAAAdAAQAAAAuAAgAAAAdAAQAAAAuAAkAAAAdAAQAAAAuAAoAAAAdAAUAAAAvAAYAAAAdAAAAAAAvAAcAAAAdAAEAAAAvAAgAAAAdAAEAAAAvAAkAAAAdAAEAAAAvAAoAAAAdAAUAAAAwAAYAAAAdAAAAAAAwAAcAAAAdAAQAAAAwAAgAAAAdAAQAAAAwAAkAAAAdAAQAAAAwAAoAAAAdAAUAAAAxAAYAAAAbAAAAAAAxAAcAAAAcAAMAAAAxAAgAAAAdAAEAAAAxAAkAAAAdAAQAAAAxAAoAAAAdAAUAAAAyAAcAAAAdAAAAAAAyAAgAAAAdAAEAAAAyAAkAAAAdAAEAAAAyAAoAAAAdAAUAAAAzAAcAAAAbAAAAAAAzAAgAAAAcAAMAAAAzAAkAAAAdAAQAAAAzAAoAAAAdAAUAAAA0AAgAAAAdAAAAAAA0AAkAAAAdAAQAAAA0AAoAAAAdAAUAAAA1AAgAAAAbAAAAAAA1AAkAAAAcAAMAAAA1AAoAAAAdAAUAAAA2AAkAAAAbAAAAAAA2AAoAAAAeAAIAAAA=")
 tile_set = ExtResource("3_epyyu")
 collision_enabled = false
-
-[node name="level_transition" parent="." instance=ExtResource("4_s2tn3")]
-position = Vector2(0, 232)
-size = 8
-target_scene = "uid://bhq5sxycj6wg0"
-
-[node name="level_transition2" parent="." instance=ExtResource("4_s2tn3")]
-position = Vector2(688, 270)
-size = 4
-location = 3
-target_scene = "uid://dd0r8bmlp7ubo"
-
-[node name="player" parent="." instance=ExtResource("5_o5ap7")]
-position = Vector2(24, 232)
 
 [node name="light_rays" type="Node2D" parent="."]
 z_index = 3

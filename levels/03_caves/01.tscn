@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=4 uid="uid://c7svy1iit0lho"]
+[gd_scene load_steps=24 format=4 uid="uid://c7svy1iit0lho"]
 
 [ext_resource type="Script" uid="uid://c5507fl50k2y" path="res://general/scripts/level_bounds.gd" id="1_8wpmi"]
 [ext_resource type="TileSet" uid="uid://k10vewo52x0l" path="res://levels/tilesets/caves_test.tres" id="2_wno2a"]
-[ext_resource type="PackedScene" uid="uid://21wgui61a3l4" path="res://player/player.tscn" id="3_8wpmi"]
 [ext_resource type="Texture2D" uid="uid://8h7bcem4snw2" path="res://levels/tilesets/sprites/cave_background.png" id="4_gf1p5"]
 [ext_resource type="Texture2D" uid="uid://bo48anvx8cwip" path="res://levels/tilesets/sprites/blazin_tileset.png" id="4_hkaa2"]
 [ext_resource type="Texture2D" uid="uid://hgue3rh3ig50" path="res://levels/tilesets/sprites/mushroom_background.png" id="5_8e0th"]
@@ -354,10 +353,6 @@ flip_v = true
 position = Vector2(0, 72)
 target_scene = "uid://dd0r8bmlp7ubo"
 target_area_name = "level_transition2"
-
-[node name="player" parent="." instance=ExtResource("3_8wpmi")]
-z_index = 2
-position = Vector2(24, 72)
 
 [node name="light_sprite" type="Sprite2D" parent="."]
 modulate = Color(0.98039216, 0, 0.8170039, 0.1764706)

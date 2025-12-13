@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://deb35v4r2fcoi"]
+
+[ext_resource type="Texture2D" uid="uid://bwjx1njxoe4pd" path="res://player/sprites/animated_cob.png" id="1_cneev"]
+
+[node name="player_spawn" type="Node2D"]
+z_index = 20
+
+[node name="player_sprite" type="Sprite2D" parent="."]
+modulate = Color(0.3108, 0.84, 0.50483996, 1)
+position = Vector2(0, -39)
+texture = ExtResource("1_cneev")
+hframes = 8
+vframes = 12
